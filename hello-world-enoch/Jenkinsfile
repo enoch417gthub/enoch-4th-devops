@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                bat 'mvn clean package'
+                bat 'cd hello-world-enoch && mvn clean package'
             }
         }
 
@@ -31,7 +31,7 @@ pipeline {
                     )
                 ],
                 contextPath: 'hello-world-enoch',
-                war: 'target/hello-world-enoch.war'
+                war: 'hello-world-enoch/target/hello-world-enoch.war'
             }
         }
     }
